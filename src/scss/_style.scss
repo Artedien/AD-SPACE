@@ -3,14 +3,14 @@
 // colors
 $white: #ffffff;
 $black: #000;
-$Pink: #c89afc;
-$Purple: #7c6afa;
-$BG: #0a0a0a;
-$Liner: #787878;
+$Gray: #1A1B1F;
+$Blue: #55ACEE;
+$BG: #060809;
 
 // body
 body {
-  font-family: 'Roboto';
+  font-family: 'Segue UI';
+  font-style: normal;
   background-color: $BG;
   color: $white;
   .lock & {
@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   position: relative;
+  overflow: hidden;
 }
 
 .overlay {

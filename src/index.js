@@ -1,30 +1,21 @@
 import './index.scss';
+import aboutSwiper from './js/components/aboutSwiper';
+import artistsSwiper from './js/components/artistsSwiper';
 
+import faq from './js/components/faq';
 import header from './js/components/header';
-import form from './js/utils/form';
-import burger from './js/components/burger';
-import scroll from './js/components/scroll';
-import timer from './js/components/timer';
-import preloader from './js/components/preloader';
 
 window.addEventListener('DOMContentLoaded', () => {
     try {
         header();
     } catch {}
     try {
-        form();
+        aboutSwiper();
     } catch {}
     try {
-        burger();
+        faq();
     } catch {}
     try {
-        scroll();
+        artistsSwiper();
     } catch {}
-    try {
-        timer(".main-hero__date-counter", 19);
-    } catch {}
-});
-
-window.addEventListener('load', function () {
-    preloader();
 });

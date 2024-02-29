@@ -1,0 +1,199 @@
+.artists {
+    // .artists__container
+
+    &__container {
+        padding: 6.6rem 0 0 0;
+    }
+
+    // .artists__inner
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10.2rem;
+    }
+
+    // .artists__title-box
+
+    &__title-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    // .artists__title
+
+    &__title {
+        font-weight: 900;
+        font-size: 5rem;
+    }
+
+    // .artists__swiper-box
+
+    &__swiper-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    // .artists__swiper-photo
+
+    &__swiper-photo {
+        width: 88rem;
+    }
+
+    // .artists__swiper-photo-wrapper
+
+    &__swiper-photo-wrapper {
+        align-items: center !important;
+        padding: 10.2rem 0;
+        height: fit-content !important;
+    }
+
+    // .artists__swiper-photo-slide
+
+    &__swiper-photo-slide {
+        width: 46rem !important;
+        height: 46rem !important;
+
+        &.swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 0;
+        }
+        &.swiper-slide-prev {
+            opacity: 1;
+        }
+        &.swiper-slide-next {
+            opacity: 1;
+        }
+        &.swiper-slide-active {
+            width: 46rem !important;
+            height: 46rem !important;
+            z-index: 10 !important;
+            opacity: 1;
+            & .artists__swiper-photo-slide-img {
+                border: 1px solid #fff;
+                box-shadow: 0 20px 60px 0 rgba(99, 99, 99, 0.5);
+            }
+            & .artists__swiper-photo-slide-img-box {
+                width: 46rem;
+                height: 46rem;
+                &::after {
+                    opacity: 0;
+                }
+            }
+            & ~ .swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // .artists__swiper-photo-slide-img-box
+
+    &__swiper-photo-slide-img-box {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(6, 8, 9, 0.7);
+            border-radius: 50%;
+            transition: opacity 0.3s;
+        }
+        width: 30rem;
+        height: 30rem;
+    }
+
+    // .artists__swiper-photo-slide-img
+
+    &__swiper-photo-slide-img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .artists__swiper-title
+
+    &__swiper-title {
+        position: absolute !important;
+        left: 8.8rem;
+        right: 15rem;
+        top: -3rem;
+    }
+
+    // .artists__swiper-title-wrapper
+
+    &__swiper-title-wrapper {
+    }
+
+    // .artists__swiper-title-slide
+
+    &__swiper-title-slide {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+
+    // .artists__swiper-title-slide-title
+
+    &__swiper-title-slide-title {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 6.4rem;
+        display: flex;
+        gap: 1.5rem;
+        &::after {
+            display: inline-block;
+            content: url('../../assets/images/Vector\ \(1\).svg');
+            position: relative;
+            bottom: 1rem;
+        }
+    }
+
+    // .artists__swiper-title-slide-desc
+
+    &__swiper-title-slide-desc {
+        padding: 0 0 0 12rem;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 4rem;
+        line-height: 84%;
+    }
+
+    // .artistis__swiper-nav-box
+
+    &__swiper-nav-box {
+        display: flex;
+        position: absolute;
+        gap: 2.2rem;
+        top: 8.2rem;
+        right: 9rem;
+    }
+
+    // .artistis__swiper-nav-btn
+
+    &__swiper-nav-btn {
+    }
+
+    // .artistis__swiper-nav-btn--prev
+
+    &__swiper-nav-btn--prev {
+    }
+
+    // .artistis__swiper-nav-btn--next
+
+    &__swiper-nav-btn--next {
+    }
+}
+.swiper-button-prev,
+.swiper-button-next {
+    position: static !important;
+    margin: 0 !important;
+    &::after {
+        content: '' !important;
+    }
+}
