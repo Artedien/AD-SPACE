@@ -1,7 +1,7 @@
 .about {
     position: relative;
     padding-bottom: 20rem;
-    border-bottom:1px solid #808080;
+    border-bottom: 1px solid #808080;
     // .about__container
 
     &__container {
@@ -22,6 +22,9 @@
         flex-direction: column;
         align-items: center;
         gap: 4rem;
+        @include small-tablet {
+            gap: 6.4rem;
+        }
     }
 
     // .about__title
@@ -35,11 +38,13 @@
 
     &__desc-box {
         display: flex;
-
         flex-direction: column;
         gap: 2.6rem;
         align-items: center;
         text-align: center;
+        @include small-tablet {
+            gap: 6.2rem;
+        }
     }
 
     // .about__desc-title
@@ -48,6 +53,10 @@
         font-weight: 700;
         font-size: 2rem;
         line-height: 168%;
+        @include small-tablet {
+            font-size: 2.8rem;
+            line-height: 164%;
+        }
     }
 
     // .about__desc
@@ -58,11 +67,18 @@
         font-size: 2.4rem;
         line-height: 140%;
         width: 86.1rem;
+        @include small-tablet {
+            width: 57.8rem;
+            line-height: 176%;
+        }
     }
 
     // .about__swiper-box
 
     &__swiper-box {
+        @include small-tablet {
+            margin: 0 -5.2rem;
+        }
     }
 
     // .about__swiper
@@ -83,6 +99,9 @@
         background-color: #1a1b1f;
         box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.5);
         border-radius: 3rem;
+        @include small-tablet {
+            border-radius:0;
+        }
     }
 
     // .about__swiper-slide-inner
@@ -94,6 +113,10 @@
         gap: 2rem;
         height: 48rem;
         justify-content: space-between;
+        @include small-tablet {
+            gap: 7rem;
+            height: 100%;
+        }
     }
 
     // .about__swiper-user-name-box
@@ -123,11 +146,16 @@
     // .about__swiper-guitar-box
 
     &__swiper-guitar-box {
-        z-index: -5;
         position: absolute;
         z-index: 5;
         top: 15%;
         left: 62%;
+        @include small-tablet {
+            top: 28%;
+            left: 55%;
+            width: 49rem;
+            height: 19.6rem;
+        }
     }
 
     // .about__swiper-user-name
@@ -136,6 +164,9 @@
         font-weight: 700;
         font-size: 1.8rem;
         line-height: 90%;
+        @include small-tablet {
+            font-size: 2.6rem;
+        }
     }
 
     // .about__swiper-user-review
@@ -151,6 +182,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 4;
+        @include small-tablet {
+            font-size: 1.6rem;
+            line-height: 150%;
+            width: 32rem;
+            height: 100%;
+            -webkit-line-clamp: 10;
+        }
     }
 
     // .about__swiper-song-box
@@ -164,12 +202,20 @@
         border-radius: 15px;
         width: 60.8rem;
         height: 16rem;
-        padding: 1.5rem 1.8rem;
+        @include small-tablet {
+            padding: 6rem 6rem;
+            width: 71.4rem;
+            height: 100%;
+            margin: 0 -3rem;
+            gap: 4rem;
+            justify-content: center;
+        }
     }
 
     // .about__swiper-song-img-box
 
     &__swiper-song-img-box {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         gap: 2rem;
@@ -180,6 +226,10 @@
     &__swiper-song-img {
         width: 8.9rem;
         height: 8.9rem;
+        @include small-tablet {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     // .about__swiper-song-name
@@ -216,6 +266,9 @@
         text-align: center;
         flex-direction: column;
         justify-content: space-between;
+        @include small-tablet {
+            gap: 0.4rem;
+        }
     }
 
     // .about__swiper-song-box-title
@@ -244,6 +297,10 @@
         text-overflow: ellipsis;
         -webkit-line-clamp: 4;
         //   height: 9rem;
+        @include small-tablet {
+            line-height: 162%;
+            width: 100%;
+        }
     }
 
     // .about__swiper-song-box-text
@@ -271,6 +328,10 @@
         padding: 4.5rem 0 0 0;
         display: flex;
         gap: 2.3rem;
+        @include small-tablet {
+            gap: 4.5rem;
+            padding: 0 6rem 0 0;
+        }
     }
 
     // .about__swiper-btn-next

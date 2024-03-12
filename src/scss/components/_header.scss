@@ -4,6 +4,10 @@
 
     &__container {
         padding: 6.8rem 0 0 0;
+        @include small-tablet {
+            padding:5rem 6rem;
+        }
+
     }
 
     // .header__inner
@@ -19,11 +23,40 @@
     &__logo {
         width: 19.3rem;
         height: 3.4rem;
+        @include small-tablet {
+            width: 21.6rem;
+            height: 3.8rem;
+        }
     }
 
     // .header__nav-wrapper
 
     &__nav-wrapper {
+        @media (max-width: 1000px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10rem;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: #000000;
+            z-index: 100;
+            padding: 15rem 1rem;
+            min-width: 50rem;
+            height: 100vh;
+            transform: translateY(-110%);
+            transition: all 0.3s;
+
+            &.active {
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 400px) {
+            min-width: 100vw;
+        }
+    
     }
 
     // .header__nav-list
@@ -31,7 +64,10 @@
     &__nav-list {
         display: flex;
         gap: 5rem;
+        @include small-tablet {
+            flex-direction: column;
 
+        }
     }
 
     // .header__nav-item
@@ -41,6 +77,10 @@
         transition: color 0.3s;
         &:hover{
             color:$Blue;
+        }
+        @include small-tablet {
+            font-size: 4.8rem;
+            text-align: center;
         }
     }
 
@@ -56,6 +96,92 @@
 display: none;
     // .burger__line
 
+}
+
+
+//---------------ADAPT-------------//
+
+
+.burger {
+    margin: 0 8rem;
+    position: relative;
+    width: 4.4rem;
+    height: 2rem;
+    z-index: 101;
+    position: fixed;
+    right: 0.3rem;
+    display: none;
+    @media (max-width: 400px) {
+        width: 4.4rem;
+        height: 2rem;
+        right: 6rem;
+    }
     &__line {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 75%;
+        height: 0.2rem;
+        background-color: $white;
+        transition: all 0.3s;
+        border-radius: 2rem;
+        @media (max-width: 400px) {
+            height: 0.2rem;
+        }
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $Blue;
+        transition: all 0.3s;
+        @media (max-width: 400px) {
+            height: 0.2rem;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height:  0.2rem;
+        background-color: $Blue;
+        transition: all 0.3s;
+        @media (max-width: 400px) {
+            height:  0.2rem;
+        }
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    &.active .burger__line {
+        opacity: 0;
+    }
+    &.active::before {
+        left: 0;
+        top: 50%;
+        transform: rotate(45deg);
+        width: 25px;
+        border: none;
+    }
+    &.active::after {
+        left: 0;
+        width: 25px;
+        bottom: auto;
+        top: 50%;
+        transform: rotate(-45deg);
+        border: none;
+    }
+    @media (max-width: 1000px) {
+        display: block;
+    }
+    @media (max-width: 400px) {
+        margin: 0;
     }
 }

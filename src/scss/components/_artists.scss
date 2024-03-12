@@ -1,6 +1,7 @@
 .artists {
     // .artists__container
-
+    border-bottom: 1px solid #808080;
+    padding: 0 0 17.2rem;
     &__container {
         padding: 6.6rem 0 0 0;
     }
@@ -11,6 +12,9 @@
         display: flex;
         flex-direction: column;
         gap: 10.2rem;
+        @include small-tablet {
+            gap: 41.8rem;
+        }
     }
 
     // .artists__title-box
@@ -25,6 +29,9 @@
     &__title {
         font-weight: 900;
         font-size: 5rem;
+        @include small-tablet {
+            padding: 10rem 0 0 0;
+        }
     }
 
     // .artists__swiper-box
@@ -51,14 +58,51 @@
 
     // .artists__swiper-photo-slide
 
+    // &__swiper-photo-slide {
+    //     width: 46rem !important;
+    //     height: 46rem !important;
+
+    //     &.swiper-slide {
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: flex-end;
+    //         opacity: 0;
+    //     }
+    //     &.swiper-slide-prev {
+    //         opacity: 1;
+    //     }
+    //     &.swiper-slide-next {
+    //         opacity: 1;
+    //     }
+    //     &.swiper-slide-active {
+    //         width: 46rem !important;
+    //         height: 46rem !important;
+    //         z-index: 10 !important;
+    //         opacity: 1;
+    //         & .artists__swiper-photo-slide-img {
+    //             border: 1px solid #fff;
+    //             box-shadow: 0 20px 60px 0 rgba(99, 99, 99, 0.5);
+    //         }
+    //         & .artists__swiper-photo-slide-img-box {
+    //             width: 46rem;
+    //             height: 46rem;
+    //             &::after {
+    //                 opacity: 0;
+    //             }
+    //         }
+    //         & ~ .swiper-slide {
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: flex-start;
+    //         }
+    //     }
+    // }
+
     &__swiper-photo-slide {
         width: 46rem !important;
         height: 46rem !important;
-
+        transition: all 0.3s;
         &.swiper-slide {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
             opacity: 0;
         }
         &.swiper-slide-prev {
@@ -68,25 +112,17 @@
             opacity: 1;
         }
         &.swiper-slide-active {
-            width: 46rem !important;
-            height: 46rem !important;
             z-index: 10 !important;
             opacity: 1;
             & .artists__swiper-photo-slide-img {
                 border: 1px solid #fff;
                 box-shadow: 0 20px 60px 0 rgba(99, 99, 99, 0.5);
+                transition: border 0.3s, box-shadow 0.3s;
             }
             & .artists__swiper-photo-slide-img-box {
-                width: 46rem;
-                height: 46rem;
                 &::after {
                     opacity: 0;
                 }
-            }
-            & ~ .swiper-slide {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
             }
         }
     }
@@ -94,7 +130,10 @@
     // .artists__swiper-photo-slide-img-box
 
     &__swiper-photo-slide-img-box {
+        width: 46rem;
+        height: 46rem;
         position: relative;
+ 
         &::after {
             content: '';
             position: absolute;
@@ -103,13 +142,14 @@
             border-radius: 50%;
             transition: opacity 0.3s;
         }
-        width: 30rem;
-        height: 30rem;
     }
 
     // .artists__swiper-photo-slide-img
 
     &__swiper-photo-slide-img {
+        transition: border 0.3s, box-shadow 0.3s;
+        border: 1px solid transparent;
+        box-shadow: 0 20px 60px 0 transparent;
         border-radius: 50%;
         width: 100%;
         height: 100%;
@@ -123,6 +163,11 @@
         left: 8.8rem;
         right: 15rem;
         top: -3rem;
+        @include small-tablet {
+            left: 0;
+            right: 15rem;
+            top: -30rem;
+        }
     }
 
     // .artists__swiper-title-wrapper
@@ -148,7 +193,7 @@
         gap: 1.5rem;
         &::after {
             display: inline-block;
-            content: url('../../assets/images/Vector\ \(1\).svg');
+            content: url('../../assets/images/check.svg');
             position: relative;
             bottom: 1rem;
         }
@@ -172,6 +217,11 @@
         gap: 2.2rem;
         top: 8.2rem;
         right: 9rem;
+        @include small-tablet {
+            gap: 2.2rem;
+            top: -16rem;
+            right: 4rem;
+        }
     }
 
     // .artistis__swiper-nav-btn

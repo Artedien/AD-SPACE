@@ -1,7 +1,10 @@
 .faq {
-    border-bottom:1px solid #808080;
+    padding: 11rem 0;
+    border-bottom: 1px solid #808080;
+    @include small-tablet {
+        padding: 15rem 0 43.6rem 0;
+    }    
     // .faq__title-box
-
     &__title-box {
         display: flex;
         justify-content: center;
@@ -13,15 +16,22 @@
         font-weight: 900;
         font-size: 5rem;
         line-height: 84%;
+        @include small-tablet {
+            text-align: center;
+            line-height: 113%;
+            width: 32rem;
+        }
     }
 
-    padding: 11rem 0;
     // .faq__inner
 
     &__inner {
         display: flex;
         flex-direction: column;
         gap: 10rem;
+        @include small-tablet {
+            gap: 25.2rem;
+        }
     }
 
     // .faq__title
@@ -32,9 +42,13 @@
     // .faq__accordion-wrapper
 
     &__accordion-wrapper {
-        border-radius: 3rem;
+        // border-radius: 3rem;
         background: $Gray;
         mix-blend-mode: lighten;
+        @include small-tablet {
+            padding: 5.2rem;
+            margin: auto -5.2rem;
+        }
     }
 
     // .faq__accordion
@@ -43,6 +57,9 @@
         display: flex;
         flex-direction: column;
         padding: 7rem 9rem;
+        @include small-tablet {
+            padding: 0;
+        }
     }
 
     // .faq__accordion-item
@@ -54,7 +71,7 @@
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        &:last-child{
+        &:last-child {
             border-bottom: 1px solid;
         }
     }
@@ -78,18 +95,16 @@
 
     &__accordion-item-header {
         cursor: pointer;
+        position: relative;
         display: flex;
         align-items: center;
-        justify-content: space-between;
         gap: 20rem;
+        gap: 0;
         width: 100%;
-   
         justify-content: space-between;
         &.active .faq__accordion-title {
             transition: color 0.3s;
-            color:#fff;
-        }
-        &.active + .faq__accordion-item-body {
+            color: #fff;
         }
         &.active .faq__accordion-svg-wrapper {
         }
@@ -98,41 +113,73 @@
             & svg {
             }
         }
+        &.active ~ .faq__accordion-count {
+            color: $BG;
+            height: 20.5rem;
+        }
+        &.active + .faq__accordion-item-body {
+            margin-bottom: 4rem;
+        }
+        &:last-child {
+            border-bottom: 1px solid;
+        }
+        @include small-tablet {
+            padding: 4rem 7rem 4rem 0rem;
+        }
     }
 
     // .faq__accordion-title
 
     &__accordion-title {
         padding: 4rem 0;
-        color:#7a7f83;;
+        color: #7a7f83;
         font-weight: 900;
         font-size: 20px;
         line-height: 135%;
-  
+        width: 68rem;
+        transition: margin-top 0.3s;
+        @include small-tablet {
+            font-size: 3rem;
+            padding:0;
+            width: 49rem;
+            line-height: 130%;
+            letter-spacing: -0.2rem;
+        }
     }
 
     // .faq__accordion-svg-wrapper
     &__accordion-svg-wrapper {
-        width: 6rem;
-        height: 6rem;
         transition: background-color 0.3s;
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        position: absolute;
+        flex-shrink: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        @include small-tablet {
+            right: 2rem;
+        }
     }
 
     &__accordion-svg-box {
-        width: 1.6rem;
-        height: 1.6rem;
         transition: transform 0.3s;
-
+        width: 2.4rem;
+        height: 2.4rem;
+        @include small-tablet {
+            width: 4rem;
+            height: 4rem;
+        }
         & svg {
             object-fit: contain;
             fill: $black;
             stroke: $black;
             transition: fill 0.3s, stroke 0.3s;
+            width: 100%;
+            height: 100%;
+            
         }
     }
 
@@ -144,6 +191,7 @@
         transition: max-height 0.3s, margin-bottom 0.3s;
         width: 86rem;
         margin-right: 3.2rem;
+        width: 100%;
     }
 
     // .faq__accordion-item-body-content
@@ -152,110 +200,11 @@
         width: 54.3rem;
         padding: 1rem 0 2rem 0;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1.8rem;
         line-height: 125%;
-    }
-}
-
-@media (max-width: 48em) {
-    .faq {
-        padding: 15rem 0;
-        // .faq__inner
-
-        &__inner {
-            display: flex;
-            flex-direction: column;
-            gap: 8rem;
-        }
-
-        // .faq__title
-
-        &__title {
-        }
-
-        // .faq__accordion-wrapper
-
-        &__accordion-wrapper {
-        }
-
-        // .faq__accordion
-
-        &__accordion {
-        }
-
-        // .faq__accordion-item
-
-        &__accordion-item {
-            border-radius: 4.8rem;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-        // .faq__accordion-count
-
-        &__accordion-count {
-            font-size: 20rem;
-            top: -1rem;
-            left: 3.2rem;
-            transition: color 0.3s, height 0.3s;
-            overflow: hidden;
-            height: 17.5rem;
-        }
-
-        // .faq__accordion-item-header
-
-        &__accordion-item-header {
-            padding: 20rem 4rem 4rem 4rem;
-            justify-content: space-between;
-            gap: 0;
-            width: 100%;
-            &.active ~ .faq__accordion-count {
-                color: $BG;
-                height: 20.5rem;
-            }
-            &.active + .faq__accordion-item-body {
-                margin-bottom: 4rem;
-            }
-            &.active .faq__accordion-title {
-                margin-top: 3rem;
-            }
-            &.active .faq__accordion-svg-box {
-            }
-        }
-
-        // .faq__accordion-title
-
-        &__accordion-title {
-            width: 100%;
-            transition: margin-top 0.3s;
-        }
-
-        // .faq__accordion-svg-wrapper
-        &__accordion-svg-wrapper {
-            position: absolute;
-            width: 10rem;
-            height: 10rem;
-            top: 4rem;
-            right: 4rem;
-        }
-
-        &__accordion-svg-box {
-            width: 2.4rem;
-            height: 2.4rem;
-        }
-
-        // .faq__accordion-item-body
-
-        &__accordion-item-body {
-            padding: 0 4rem 0 4rem;
-            width: 100%;
-        }
-
-        // .faq__accordion-item-body-content
-
-        &__accordion-item-body-content {
+        @include small-tablet {
+            font-size: 2rem;
+            padding:0;
         }
     }
 }
