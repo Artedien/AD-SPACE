@@ -10,7 +10,5 @@ const scroll = () => {
                 block: 'start',
             });
         });
-    }
-};
-
-export default scroll;
+    }}
+    export default scroll

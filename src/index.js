@@ -3,6 +3,7 @@ import aboutSwiper from './js/components/aboutSwiper';
 import artistsSwiper from './js/components/artistsSwiper';
 import releaseSwiper from './js/components/releaseSwiper';
 import burger from './js/components/burger';
+import scroll from './js/components/scroll';
 
 import faq from './js/components/faq';
 import header from './js/components/header';
@@ -25,5 +26,8 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch {}
     try {
         burger();
+    } catch {}
+    try {
+        scroll();
     } catch {}
 });
