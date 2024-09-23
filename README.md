@@ -19,7 +19,7 @@
 
 <h2>📱 My contacts:</h2> 
 <ul>
- <li>Email: <a href="mailto:artedien@mail.ru">📧 artedien@mail.ru</a></li>
+ <li>Email: <a href="mailto:artedien@gmail.com">📧 artedien@mail.ru</a></li>
  <li>Telegram:  <a href="https://t.me/borland_westly">💬 @borland_westly</a></li>
 
 </ul>
