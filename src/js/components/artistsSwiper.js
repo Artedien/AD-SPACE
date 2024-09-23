@@ -37,7 +37,7 @@ const artistsSwiper = () => {
                 coverflowEffect: {
                     rotate: 0,
                     stretch: 45,
-                    depth: 300,
+                    depth: 500,
                     modifier: 1.5,
                     slideShadows: false,
                 },
